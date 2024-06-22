@@ -16,6 +16,7 @@ import {
     useDisclosure,
     HStack,
     VStack,
+    textDecoration,
 } from '@chakra-ui/react';
 import {
     HamburgerIcon,
@@ -23,6 +24,7 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
 } from '@chakra-ui/icons';
+import logo from '../assets/logo.png'
 
 export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
@@ -53,12 +55,12 @@ export default function Navbar() {
                     />
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                    <Text
+                    <Box
                         textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                         fontFamily={'heading'}
                         color={useColorModeValue('gray.800', 'white')}>
-                        Logo
-                    </Text>
+                        <img src={logo} alt="" />
+                    </Box>
 
                     {/* <Flex display={{ base: 'none', md: 'flex' }} ml={10} >
               
@@ -70,7 +72,6 @@ export default function Navbar() {
                     direction={'row'}
                     marginRight={'10px'}
                 >
-
                     <DesktopNav />
                 </Stack>
 
@@ -115,6 +116,7 @@ const DesktopNav = () => {
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
+
     return (
         <Stack direction={'row'} spacing={4}>
             {NAV_ITEMS.map((navItem) => (
@@ -144,36 +146,38 @@ const DesktopNav = () => {
                                 bg={popoverContentBgColor}
                                 p={2}
                                 rounded={'xl'}
-                                minW={'2xl'}
-                               
+                                w={'fit-content'}
+
                             >
-                                <HStack spacing={6} 
-                               >
-                                    <Stack >
-
-                                        {navItem.col1.map((child) => (
-                                            <DesktopSubNav key={child.label} {...child} />
-                                        ))}
-
-                                    </Stack>
-
-                                    <Stack textAlign={'start'}>
-                                        {navItem.col2.map((child) => (
-                                            <DesktopSubNav key={child.label} {...child} />
-                                        ))}
-
-
-                                    </Stack>
-
+                                <HStack spacing={6}
+                                    webkit-align-items={'start'}
+                                    alignItems={'start'}
+                                >
                                     <Stack>
+
                                         {navItem.col1.map((child) => (
                                             <DesktopSubNav key={child.label} {...child} />
                                         ))}
 
                                     </Stack>
 
-                                    <Stack>
-                                        {navItem.col1.map((child) => (
+                                    <Stack textAlign={'left'}>
+                                        {navItem?.col2?.map((child) => (
+                                            <DesktopSubNav key={child.label} {...child} />
+                                        ))}
+
+
+                                    </Stack>
+
+                                    <Stack textAlign={'left'}>
+                                        {navItem?.col3?.map((child) => (
+                                            <DesktopSubNav key={child.label} {...child} />
+                                        ))}
+
+                                    </Stack>
+
+                                    <Stack textAlign={'left'}>
+                                        {navItem?.col4?.map((child) => (
                                             <DesktopSubNav key={child.label} {...child} />
                                         ))}
 
@@ -196,17 +200,25 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
             display={'block'}
             py={2}
             rounded={'md'}
+            _hover={{
+                textDecoration: 'none',
+            }}
         >
             <Stack direction={'row'} align={'start'} >
                 <Box>
                     <Text
-
+                        align={'start'}
                         transition={'all .3s ease'}
-                        fontSize={13}
-                        fontWeight={'bold'}>
+                        fontSize={14}
+                        fontWeight={'bold'}
+                        _hover={{
+                            textDecoration: 'underline',
+                        }}>
                         {label}
                     </Text>
-                    {subLabel && subLabel.length > 0 && <Text fontSize={'sm'}>{subLabel.map((item) => <Text textAlign={'start'}>{item}</Text>)}</Text>}
+                    {subLabel && subLabel.length > 0 && <Text fontSize={'sm'} align={'start'}>{subLabel?.map((item) => <Text textAlign={'start'} _hover={{
+                        textDecoration: 'underline',
+                    }}>{item}</Text>)}</Text>}
                 </Box>
                 {/* <Flex
                     transition={'all .3s ease'}
@@ -289,7 +301,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
     {
-        label: 'Inspiration',
+        label: 'MEN',
         col1: [
             {
                 label: 'CLOTHING',
@@ -323,6 +335,21 @@ const NAV_ITEMS = [
                 label: 'NIGHT & LAUNGWEAR',
                 href: '#',
             },
+
+            {
+                label: 'WINTER WEAR',
+                href: '#',
+            },
+
+            {
+                label: 'GROOMING',
+                href: '#',
+            },
+
+            {
+                label: 'ETHNIC & FESTIVE',
+                href: '#',
+            },
         ],
 
         col2: [
@@ -335,35 +362,345 @@ const NAV_ITEMS = [
             },
 
             {
-                label: 'CLOTHING',
-                subLabel: ['Jackets', 'Jeans', 'Shirt', 'Trousers',
-                    'Jackets', 'Jeans', 'Shirt', 'Trousers',
+                label: 'FOOTWEAR',
+                subLabel: ['Casual Shoes', 'Flip-Flop & Slippers', 'Formal Shoes', 'Sandals',
+                    'Sneakers', 'Sports Shoes', 'Shirt', 'Trousers',
                 ],
                 href: '#',
             },
         ],
-    },
-    {
-        label: 'Find Work',
-        children: [
+
+        col3: [
             {
-                label: 'Job Board',
-                subLabel: 'Find your dream design job',
+                label: 'ACCESSORIES',
+                subLabel: ['BagPacks', 'Wallets', 'Belt', 'Caps & Shorts',
+                    'Fashion Accessories', 'Socks', 'Sunglasses', 'Watches',
+                ],
                 href: '#',
             },
+
             {
-                label: 'Freelance Projects',
-                subLabel: 'An exclusive list for contract work',
+                label: 'PRECIOUS JWELLERY',
+                subLabel: ['Gold & Silver Coins', 'Gold & Diamond Jwellery', 'Silver Jwellery'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'INNER WEAR',
+                subLabel: ['Breifs', 'Trunks & Boxers', 'Vests'
+                ],
                 href: '#',
             },
         ],
+
+        col4: [
+            {
+                label: 'FEATURED',
+                subLabel: ['Bags under 1499', 'Footwear under 1499', 'Jeans under 1299', <strong>#Ajio Recommends</strong>,
+                    'Play Time'
+                ],
+                href: '#',
+            },
+
+        ],
     },
     {
-        label: 'Learn Design',
-        href: '#',
+        label: 'WOMEN',
+        col1: [
+            {
+                label: 'CLOTHING',
+                href: '#',
+            },
+
+            {
+                label: 'FOOTWEAR',
+
+                href: '#',
+            },
+
+            {
+                label: 'ACCESORIES',
+
+                href: '#',
+            },
+
+            {
+                label: 'MENS WEAR',
+
+                href: '#',
+            },
+            {
+                label: 'WOMENS WEAR',
+
+                href: '#',
+            },
+
+            {
+                label: 'NIGHT & LAUNGWEAR',
+                href: '#',
+            },
+
+            {
+                label: 'WINTER WEAR',
+                href: '#',
+            },
+
+            {
+                label: 'GROOMING',
+                href: '#',
+            },
+
+            {
+                label: 'ETHNIC & FESTIVE',
+                href: '#',
+            },
+        ],
+
+
+        col2: [
+            {
+                label: 'ETHNIC WEAR',
+                subLabel: ['Kurtas', 'Dress Material', 'Salwar & Churidars', 'Sarees',
+                    'Dupttas', 'Kurti Suit Sets', 'Blouses', 'Skirt & Ghagras', 'Shawls & Wraps', 'Palazzos & Culottes'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'JWELLERY',
+                subLabel: [
+                    'Gold And Silver Coins', 'Gold And Diamond Jewellery', 'Silver Jewellery', 'Fashion Jewellery',
+                ],
+                href: '#',
+            },
+        ],
+
+        col3: [
+            {
+                label: 'ACCESSORIES',
+                subLabel: ['Sunglasses & Frames', 'Wallets', 'Belt', 'Caps & Shorts',
+                    'Fashion Accessories', 'Socks', 'Sunglasses', 'Luggage & Trolleys',
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'LINGERIE & INNERWEAR',
+                subLabel: ['Bras', 'Panties', 'Camisoles & Slips', 'Maternity Wear', 'Thermal Wear'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'FEATURED',
+                subLabel: ['Dresses Under 999', 'Footwear Under 799'
+                ],
+                href: '#',
+            },
+        ],
+
+        col4: [
+            {
+                label: 'FOOTWEAR',
+                subLabel: ['Casual Shoes', 'Flat Sandals', 'Sports Shoes', 'Flip Flop & SlippersHeeled', 'SandalsHeeled', 'Shoes', 'Boots', 'Woodland'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'WESTERN WEAR',
+                subLabel: ['Tops', 'T-Shirts', 'Jeans & Jeggings', 'Dresses', 'Trousers & Pants', 'Shirts', 'Track Pants', 'Skirts & Shorts', 'Jackets & Coats', 'Jumpsuits & Playsuits', 'Shrugs & Boleros', 'Sweatshirts & Hoodies', 'Sweaters & Cardigans'
+                ],
+                href: '#',
+            },
+
+        ],
     },
     {
-        label: 'Hire Designers',
-        href: '#',
+        label: 'KIDS',
+        col1: [
+            {
+                label: 'CLOTHING',
+                href: '#',
+            },
+
+            {
+                label: 'FOOTWEAR',
+
+                href: '#',
+            },
+
+            {
+                label: 'ACCESORIES',
+
+                href: '#',
+            },
+
+            {
+                label: 'MENS WEAR',
+
+                href: '#',
+            },
+            {
+                label: 'WOMENS WEAR',
+
+                href: '#',
+            },
+
+            {
+                label: 'NIGHT & LAUNGWEAR',
+                href: '#',
+            },
+
+            {
+                label: 'WINTER WEAR',
+                href: '#',
+            },
+
+            {
+                label: 'GROOMING',
+                href: '#',
+            },
+
+            {
+                label: 'ETHNIC & FESTIVE',
+                href: '#',
+            },
+        ],
+
+        col2: [
+            {
+                label: 'BOYS',
+                subLabel: ['Denims & Trousers', 'Joggers & Track', 'Pants', 'Outerwear', 'Shirts', 'Shorts & 3/4thsT-Shirts',
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'GIRLS',
+                subLabel: ['Dresses & Frocks', 'Jeans & Jeggings', 'Leggings', 'Outerwear', 'Skirts & Shorts', 'Tops & T-Shirts'
+                ],
+                href: '#',
+            },
+        ],
+
+        col3: [
+            {
+                label: 'SHOP BY AGE',
+                subLabel: ['0 To 2 Years', '2 To 5 Years', '5 To 8 Years', '8 To 12 Years', '12 Years And Above'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'FEATURED',
+                subLabel: ['Dresses Under 499', 'Tops Under 399'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'BABY',
+                subLabel: ['Sets'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'TOYS AND BABYCARE',
+                subLabel: ['Action-Figurine & Collectibles', 'Creative & Educational Toys', 'Gaming', 'Robots & Vehicles', 'Infants Toys', 'Role & Pretend PlaySchool', 'Party Supplies & BooksSoft', 'ToysToy-Guns & Accessories'
+                ],
+                href: '#',
+            },
+        ],
+
+        col4: [
+            {
+                label: 'FEATURED BRANDS',
+                subLabel: ['Crocs', 'MINI KLUB', 'Gini & Jony', 'Hamleys', 'Mothercare', 'Marks & Spencer', 'Pepe Jeans', 'Peppermint', 'UCB Kids', 'U.S.P.A', 'KidsMILA', 'BABYMUJILee', 'Cooper'
+                ],
+                href: '#',
+            },
+
+        ],
+    },
+    {
+        label: 'HOME & KITCHEN',
+        col1: [
+            {
+                label: 'BED LINEN',
+                subLabel: [
+                    'Bedsheets', 'Bedding Sets', 'Blankets', 'Dohars & Quilts', 'Comforters', 'Bed Covers', 'MattressProtectors', 'Quilt & Duvet Covers'
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'CUSHIONS & PILLOWS',
+                subLabel: ['Cushions', 'Pillows', 'Bed Wedges & Neck Pillows', 'Bolsters', 'Cushion Covers', 'Pillow Covers',
+                    <strong>'RUGS', 'CARPETS & MATS'</strong>
+                ],
+                href: '#',
+            },
+        ],
+        col2: [
+            {
+                label: 'CURTAIN & ACCESSORIES',
+                subLabel: ['Window Curtains', 'Door Curtains'
+
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'KITCHEN',
+                subLabel: ['Cookware & Cutlery', 'Bakeware', 'Kitchen Tools', 'Kitchen Aprons', 'Gloves & Towel', 'Kitchen Organisers'
+                ],
+                href: '#',
+            },
+            {
+                label: 'DINING',
+                subLabel: ['Serveware & Drinkware', 'Table Linen Sets', 'Table Covers & Runners', 'Table Napkins', 'Placemats & Coasters',
+                    <strong>STATIONERY & ORGANISERS </strong>
+                ],
+                href: '#',
+            },
+        ],
+
+        col3: [
+            {
+                label: 'HOME DECOR',
+                subLabel: ['Wall Decor', 'Wall Shelves', 'Clocks', 'Photo Frames', 'Mirrors', 'Lamp', 'Diyas & Candle', 'Home Fragnance', 'Plants & Flowers'
+                ],
+                href: '#',
+            },
+            {
+                label: 'FESTIVE GIFTS',
+                subLabel: ['Bells & Wind Chimes', 'Decorative Pots', 'Plates & Jars', 'Fengshui', 'Indoor Fountains', 'Religious Idols', 'Vases',
+                    <strong>GARDENING & PLANTERS</strong>
+                ],
+                href: '#',
+            },
+        ],
+
+        col4: [
+            {
+                label: 'BATH',
+                subLabel: ['Bath Towel & Robes','Hand & Face Towels','Towel Sets','Bath Curtains & Mats','Bathroom Organisers','Laundry Baskets & Dryers','Holders & More',
+                    <strong>HOME ESSENTIALS</strong>
+                ],
+                href: '#',
+            },
+
+            {
+                label: 'FEATURED STORIES',
+                subLabel: ['GIFT For Everyone Under 999','Winter Carnival Upto 60','Kids Room Min 40','Heritage Of India'
+                ],
+                href: '#',
+            },
+
+        ],
+
     },
 ];
