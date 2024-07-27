@@ -1,20 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
-import Carousel from './components/Carousel';
-import Footer from './components/Footer';
+import "./App.css";
+import RootLayout from "./layouts/RootLayout.jsx"; 
+import AllRoutes from "./routes/Routes.jsx";
+import ProductPage from './pages/ProductPage';
+import ProductDetails from './pages/ProductDetails';
+import {Route,Routes}from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="App">
-      <Navbar />
-      <Carousel />
-      <Carousel />
-      <Carousel />
-      <Carousel />
-      <Carousel />
-      <Footer />
-    </div>
+    <RootLayout>
+      <AllRoutes />
+    </RootLayout>
+   
+    
   );
 }
 

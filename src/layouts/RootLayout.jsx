@@ -1,5 +1,5 @@
 import { Fragment } from "react"; 
-import Navbar from "../component/Navbar/Navbar"
+import Navbar from "../components/Navbar.jsx"
 
 
 const RootLayout = ({ children }) => {

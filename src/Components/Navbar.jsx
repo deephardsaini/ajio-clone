@@ -40,7 +40,9 @@ export default function Navbar() {
                 borderBottom={1}
                 borderStyle={'solid'}
                 borderColor={useColorModeValue('gray.200', 'gray.900')}
-                align={'center'}>
+                align={'center'}
+                position={'fixed'}
+                zIndex={1}>
                 <Flex
                     flex={{ base: 1, md: 'auto' }}
                     ml={{ base: -2 }}
@@ -302,53 +304,52 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
     {
         label: 'MEN',
+        href: 'mens',
         col1: [
             {
                 label: 'CLOTHING',
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'FOOTWEAR',
-
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'ACCESORIES',
-
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'MENS WEAR',
 
-                href: '#',
+                href: 'mens',
             },
             {
                 label: 'WOMENS WEAR',
 
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'NIGHT & LAUNGWEAR',
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'WINTER WEAR',
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'GROOMING',
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'ETHNIC & FESTIVE',
-                href: '#',
+                href: 'mens',
             },
         ],
 
@@ -358,7 +359,7 @@ const NAV_ITEMS = [
                 subLabel: ['Jackets', 'Jeans', 'Shirt', 'Trousers',
                     'Jackets', 'Jeans', 'Shirt', 'Trousers',
                 ],
-                href: '#',
+                href: 'mens',
             },
 
             {
@@ -366,7 +367,7 @@ const NAV_ITEMS = [
                 subLabel: ['Casual Shoes', 'Flip-Flop & Slippers', 'Formal Shoes', 'Sandals',
                     'Sneakers', 'Sports Shoes', 'Shirt', 'Trousers',
                 ],
-                href: '#',
+                href: 'mens',
             },
         ],
 
@@ -376,21 +377,21 @@ const NAV_ITEMS = [
                 subLabel: ['BagPacks', 'Wallets', 'Belt', 'Caps & Shorts',
                     'Fashion Accessories', 'Socks', 'Sunglasses', 'Watches',
                 ],
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'PRECIOUS JWELLERY',
                 subLabel: ['Gold & Silver Coins', 'Gold & Diamond Jwellery', 'Silver Jwellery'
                 ],
-                href: '#',
+                href: 'mens',
             },
 
             {
                 label: 'INNER WEAR',
                 subLabel: ['Breifs', 'Trunks & Boxers', 'Vests'
                 ],
-                href: '#',
+                href: 'mens',
             },
         ],
 
@@ -400,60 +401,61 @@ const NAV_ITEMS = [
                 subLabel: ['Bags under 1499', 'Footwear under 1499', 'Jeans under 1299', <strong>#Ajio Recommends</strong>,
                     'Play Time'
                 ],
-                href: '#',
+                href: 'mens',
             },
 
         ],
     },
     {
         label: 'WOMEN',
+        href: 'womens',
         col1: [
             {
                 label: 'CLOTHING',
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'FOOTWEAR',
 
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'ACCESORIES',
 
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'MENS WEAR',
 
-                href: '#',
+                href: 'womens',
             },
             {
                 label: 'WOMENS WEAR',
 
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'NIGHT & LAUNGWEAR',
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'WINTER WEAR',
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'GROOMING',
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'ETHNIC & FESTIVE',
-                href: '#',
+                href: 'womens',
             },
         ],
 
@@ -464,7 +466,7 @@ const NAV_ITEMS = [
                 subLabel: ['Kurtas', 'Dress Material', 'Salwar & Churidars', 'Sarees',
                     'Dupttas', 'Kurti Suit Sets', 'Blouses', 'Skirt & Ghagras', 'Shawls & Wraps', 'Palazzos & Culottes'
                 ],
-                href: '#',
+                href: 'womens',
             },
 
             {
@@ -472,7 +474,7 @@ const NAV_ITEMS = [
                 subLabel: [
                     'Gold And Silver Coins', 'Gold And Diamond Jewellery', 'Silver Jewellery', 'Fashion Jewellery',
                 ],
-                href: '#',
+                href: 'womens',
             },
         ],
 
@@ -482,21 +484,21 @@ const NAV_ITEMS = [
                 subLabel: ['Sunglasses & Frames', 'Wallets', 'Belt', 'Caps & Shorts',
                     'Fashion Accessories', 'Socks', 'Sunglasses', 'Luggage & Trolleys',
                 ],
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'LINGERIE & INNERWEAR',
                 subLabel: ['Bras', 'Panties', 'Camisoles & Slips', 'Maternity Wear', 'Thermal Wear'
                 ],
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'FEATURED',
                 subLabel: ['Dresses Under 999', 'Footwear Under 799'
                 ],
-                href: '#',
+                href: 'womens',
             },
         ],
 
@@ -505,67 +507,67 @@ const NAV_ITEMS = [
                 label: 'FOOTWEAR',
                 subLabel: ['Casual Shoes', 'Flat Sandals', 'Sports Shoes', 'Flip Flop & SlippersHeeled', 'SandalsHeeled', 'Shoes', 'Boots', 'Woodland'
                 ],
-                href: '#',
+                href: 'womens',
             },
 
             {
                 label: 'WESTERN WEAR',
                 subLabel: ['Tops', 'T-Shirts', 'Jeans & Jeggings', 'Dresses', 'Trousers & Pants', 'Shirts', 'Track Pants', 'Skirts & Shorts', 'Jackets & Coats', 'Jumpsuits & Playsuits', 'Shrugs & Boleros', 'Sweatshirts & Hoodies', 'Sweaters & Cardigans'
                 ],
-                href: '#',
+                href: 'womens',
             },
 
         ],
     },
     {
         label: 'KIDS',
+        href: 'kids',
         col1: [
             {
                 label: 'CLOTHING',
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'FOOTWEAR',
-
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'ACCESORIES',
 
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'MENS WEAR',
 
-                href: '#',
+                href: 'kids',
             },
             {
                 label: 'WOMENS WEAR',
 
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'NIGHT & LAUNGWEAR',
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'WINTER WEAR',
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'GROOMING',
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'ETHNIC & FESTIVE',
-                href: '#',
+                href: 'kids',
             },
         ],
 
@@ -574,14 +576,14 @@ const NAV_ITEMS = [
                 label: 'BOYS',
                 subLabel: ['Denims & Trousers', 'Joggers & Track', 'Pants', 'Outerwear', 'Shirts', 'Shorts & 3/4thsT-Shirts',
                 ],
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'GIRLS',
                 subLabel: ['Dresses & Frocks', 'Jeans & Jeggings', 'Leggings', 'Outerwear', 'Skirts & Shorts', 'Tops & T-Shirts'
                 ],
-                href: '#',
+                href: 'kids',
             },
         ],
 
@@ -590,28 +592,28 @@ const NAV_ITEMS = [
                 label: 'SHOP BY AGE',
                 subLabel: ['0 To 2 Years', '2 To 5 Years', '5 To 8 Years', '8 To 12 Years', '12 Years And Above'
                 ],
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'FEATURED',
                 subLabel: ['Dresses Under 499', 'Tops Under 399'
                 ],
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'BABY',
                 subLabel: ['Sets'
                 ],
-                href: '#',
+                href: 'kids',
             },
 
             {
                 label: 'TOYS AND BABYCARE',
                 subLabel: ['Action-Figurine & Collectibles', 'Creative & Educational Toys', 'Gaming', 'Robots & Vehicles', 'Infants Toys', 'Role & Pretend PlaySchool', 'Party Supplies & BooksSoft', 'ToysToy-Guns & Accessories'
                 ],
-                href: '#',
+                href: 'kids',
             },
         ],
 
@@ -620,7 +622,7 @@ const NAV_ITEMS = [
                 label: 'FEATURED BRANDS',
                 subLabel: ['Crocs', 'MINI KLUB', 'Gini & Jony', 'Hamleys', 'Mothercare', 'Marks & Spencer', 'Pepe Jeans', 'Peppermint', 'UCB Kids', 'U.S.P.A', 'KidsMILA', 'BABYMUJILee', 'Cooper'
                 ],
-                href: '#',
+                href: 'kids',
             },
 
         ],
@@ -667,7 +669,6 @@ const NAV_ITEMS = [
                 href: '#',
             },
         ],
-
         col3: [
             {
                 label: 'HOME DECOR',
@@ -687,7 +688,7 @@ const NAV_ITEMS = [
         col4: [
             {
                 label: 'BATH',
-                subLabel: ['Bath Towel & Robes','Hand & Face Towels','Towel Sets','Bath Curtains & Mats','Bathroom Organisers','Laundry Baskets & Dryers','Holders & More',
+                subLabel: ['Bath Towel & Robes', 'Hand & Face Towels', 'Towel Sets', 'Bath Curtains & Mats', 'Bathroom Organisers', 'Laundry Baskets & Dryers', 'Holders & More',
                     <strong>HOME ESSENTIALS</strong>
                 ],
                 href: '#',
@@ -695,7 +696,7 @@ const NAV_ITEMS = [
 
             {
                 label: 'FEATURED STORIES',
-                subLabel: ['GIFT For Everyone Under 999','Winter Carnival Upto 60','Kids Room Min 40','Heritage Of India'
+                subLabel: ['GIFT For Everyone Under 999', 'Winter Carnival Upto 60', 'Kids Room Min 40', 'Heritage Of India'
                 ],
                 href: '#',
             },

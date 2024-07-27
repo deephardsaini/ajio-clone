@@ -1,22 +1,25 @@
-import { Fragment } from "react";
-
-import Hero from "../component/Hero/Hero";
-import About from "../component/About/About";
-import Skills from "../component/Skills/Skills";
-import Project from "../component/Projects/Project";
-import Contact from "../component/ContactUs/Contact";
-import RootLayout from "../layouts/RootLayout/";
+import React from "react";
+import logo from "../logo.svg";
+import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
+import { caro1, caro2, caro3, caro4 } from "../db";
+import Banner from "../components/Banner";
 
 const HomePage = () => {
   // Render the components for the home page
   return (
-    <RootLayout> 
-      <Hero />
-      <About />
-      <Skills />
-      <Project />
-      <Contact />
-    </RootLayout>
+    <div>
+      <Carousel data={caro1} />
+      <Carousel data={caro2} />
+      <Banner
+        image={
+          "https://assets.ajio.com/cms/AJIO/WEB/D-1.0-UHP-30052024-FREEDEL-allorder.jpg"
+        }
+      />
+      <Carousel data={caro3} />
+      <Carousel data={caro4} />
+      <Footer />
+    </div>
   );
 };
 
