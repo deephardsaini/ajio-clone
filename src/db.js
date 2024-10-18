@@ -10,10 +10,11 @@ const caro1 = [
 ];
 
 const caro2 = [
-  "https://assets.ajio.com/cms/AJIO/WEB/1440x128BOB.jpg",
-  "https://assets.ajio.com/cms/AJIO/WEB/D-1.0-UHP-05042024-bankoffers-Z1-5instant-prepaid.jpg",
-  "https://assets.ajio.com/cms/AJIO/WEB/1440x128-%20UHP%20web%20RRL_SBI.jpg",
-  "https://assets.ajio.com/cms/AJIO/WEB/1440x128%20FI-copy.jpg"
+  "https://mercury.akamaized.net/i/9107e81bb3d881c6bf3f26510bebaf8b_279280_0.png",
+  "https://mercury.akamaized.net/i/319b7efebd28c148d75f948d8ab1d3c8_279337_0.png",
+  "https://mercury.akamaized.net/i/331e10dd7a31dfb5f29f96cf36c5637e_279362_0.png",
+  "https://mercury.akamaized.net/i/8c41b4fdf6b9691ba94102b5a1b39985_279364_0.png",
+  "https://mercury.akamaized.net/i/240f380824664a8711f71f8819e22eae_101179_0.png"
 ];
 
 const caro3 = [

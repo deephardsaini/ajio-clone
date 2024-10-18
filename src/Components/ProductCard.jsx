@@ -46,7 +46,7 @@ function ProductCard({ data,category }) {
   const navigate = useNavigate()
   return (
     <Flex  alignItems="center" justifyContent="center">
-      <Link to={`/${category}/${data.id}`}>
+      <Link to={`/product/${category}/${data.id}`}>
       <Box
         bg={useColorModeValue('white', 'gray.800')}
         borderWidth="1px"
@@ -98,7 +98,7 @@ function ProductCard({ data,category }) {
             {data.productName}
           </Box>
 
-          <Flex justifyContent="space-between" alignContent="center">
+          <Flex justifyContent="center" alignContent="center">
             {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
             <Box fontSize="xl" color={useColorModeValue('gray.800', 'white')}>
             ₹

@@ -41,7 +41,7 @@ export default function Carousel(props) {
   return (
     <Box
       position={"relative"}
-      height={"600px"}
+    
       width={"full"}
       overflow={"hidden"}
     >

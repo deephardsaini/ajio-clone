@@ -395,7 +395,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
 const ProductPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { category } = useParams();
-  console.log(category);
+
   return (
     <Box
       minH="100vh"

@@ -1,18 +1,19 @@
 import "./App.css";
-import RootLayout from "./layouts/RootLayout.jsx"; 
+import RootLayout from "./layouts/RootLayout.jsx";
 import AllRoutes from "./routes/Routes.jsx";
-import ProductPage from './pages/ProductPage';
-import ProductDetails from './pages/ProductDetails';
-import {Route,Routes}from "react-router-dom";
+import React from 'react';
+import { CartProvider } from './pages/CartContext';
+import CartContext from './pages/CartContext'; // Check if this file is in src
+import ProductDetail from './pages/ProductDetails'; // Correct the path if it's different
+
 
 function App() {
-
   return (
-    <RootLayout>
-      <AllRoutes />
-    </RootLayout>
-   
-    
+    <CartProvider>
+       <RootLayout>
+       <AllRoutes />
+      </RootLayout>
+    </CartProvider>
   );
 }
 
