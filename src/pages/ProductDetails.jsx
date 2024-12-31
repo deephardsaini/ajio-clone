@@ -70,9 +70,9 @@ export default function ProductDetail() {
             </Heading>
             <Text>{detail.productName}</Text>
             <Text color={useColorModeValue("gray.900", "gray.400")} fontWeight={400} fontSize={"2xl"}>
-              {detail.discountedPrice}
+              {detail.price}
             </Text>
-            <Text fontSize={"1xl"}>{detail.offerPrice} (74% OFF)</Text>
+            <Text fontSize={"1xl"}>{detail.price} (74% OFF)</Text>
             <Text fontSize={"xs"}>Price inclusive of all taxes</Text>
           </Box>
 

@@ -8,7 +8,7 @@ import Banner from "../components/Banner";
 const HomePage = () => {
   // Render the components for the home page
   return (
-    <div>
+    <div style={{ paddingTop: "50px", width:"100%"}}>
       <Carousel data={caro1} />
       <Carousel data={caro2} />
       <Banner

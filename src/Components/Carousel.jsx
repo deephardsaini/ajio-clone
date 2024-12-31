@@ -41,9 +41,9 @@ export default function Carousel(props) {
   return (
     <Box
       position={"relative"}
-    
-      width={"full"}
+      width={"100"}
       overflow={"hidden"}
+      marginLeft={"40px"}
     >
       {/* CSS files for react-slick */}
       <link
@@ -62,6 +62,7 @@ export default function Carousel(props) {
         {props.data.map((image, index) => (
           <Box
             key={index}
+            width={'100%'}
             height={"100%"}
             position="relative"
             margin={"0px"}
@@ -74,8 +75,8 @@ export default function Carousel(props) {
             <Container size="container.lg" height="500px" position="relative">
               <Stack
                 spacing={0}
-                w={"full"}
-                maxW={"lg"}
+                w={"100%"}
+                maxW={"md"}
                 position="absolute"
                 top="50%"
                 marginBottom={"0px"}

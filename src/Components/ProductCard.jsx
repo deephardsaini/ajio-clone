@@ -102,7 +102,7 @@ function ProductCard({ data,category }) {
             {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
             <Box fontSize="xl" color={useColorModeValue('gray.800', 'white')}>
             ₹
-              {data.discountedPrice}
+              {data.price}
             </Box>
           </Flex>
 
@@ -110,9 +110,9 @@ function ProductCard({ data,category }) {
             fontSize={'1rem'}
             color={'green'}
             textAlign={'center'}>
-              offer price 
+              price 
               ₹
-            {data.offerPrice}
+            {data.originalPrice}
           </Box>
         </Box>
       </Box>
