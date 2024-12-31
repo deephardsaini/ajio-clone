@@ -17,7 +17,6 @@ import { useEffect, useState, useContext } from "react";
 import { MdLocalShipping } from "react-icons/md";
 import { mens, womens, kids } from "../db";
 import { useParams } from "react-router-dom";
-import { NavLink } from 'react-router-dom';
 import { CartContext } from "./CartContext"; // Import CartContext
 import { useNavigate } from 'react-router-dom';
 

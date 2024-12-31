@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerHeader, Button, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Checkbox, Stack, Select } from '@chakra-ui/react';
+import { Box, Button, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Checkbox, Stack, Select } from '@chakra-ui/react';
 import ProductCard from '../components/ProductCard';
 import { mens, womens, kids } from '../db';
 
@@ -125,7 +125,7 @@ const ProductPage = () => {
       {category === 'kids' && (
         <>
           <Checkbox onChange={() => handleFilterChange('category', 'Onesies')}>Onesies</Checkbox>
-          <Checkbox onChange={() => handleFilterChange('category', 'Shorts')}>Shorts</Checkbox>
+          <Checkbox onChange={() => handleFilterChange('category', 'Shorts')}>Shorts</Checkbox> 
           <Checkbox onChange={() => handleFilterChange('category', 'Dress')}>Dress</Checkbox>
         </>
       )}

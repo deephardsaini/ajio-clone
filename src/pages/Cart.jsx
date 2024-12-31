@@ -1,5 +1,4 @@
-"use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   IconButton,
   Box,
@@ -25,7 +24,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { FiMenu } from "react-icons/fi";
+
 import { Plus, Minus } from "lucide-react";
 import { CartContext } from "./CartContext";
 
@@ -33,16 +32,26 @@ export default function SimpleSidebar() {
   const { cart, removeFromCart } = useContext(CartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const calculateSubtotal = (price, quantity) => price * quantity;
-  const totalMRP = cart.reduce(
-    (acc, item) => acc + item.originalPrice * item.quantity,
-    0
-  );
-  const totalAmount = cart.reduce(
-    (acc, item) => acc + item.offerPrice * item.quantity,
-    0
-  );
+  const [totalMRP, setTotalMRP] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
 
+  const calculateSubtotal = (price) => price;
+
+  useEffect(() => {
+    const calculatedMRP = cart.reduce(
+      (acc, item) => acc + (item.originalPrice),
+      0
+    );
+    const calculatedAmount = cart.reduce(
+      (acc, item) => acc + (item.price),
+      0
+    );
+
+    setTotalMRP(calculatedMRP);
+    setTotalAmount(calculatedAmount);
+  }, [cart]);
+
+  console.log(cart);
   return (
     <Flex justifyContent="center" minH="100vh" w="100%" bg="gray.100">
       {/* Table */}
@@ -153,6 +162,7 @@ const SidebarContent = ({ totalMRP, totalAmount }) => {
           Total Amount: {totalAmount}
         </Text>
       </Box>
+
       <BasicUsage />
     </Box>
   );

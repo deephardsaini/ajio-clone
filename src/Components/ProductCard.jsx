@@ -79,18 +79,6 @@ function ProductCard({ data,category }) {
               isTruncated>
               {data.brand}
             </Box>
-
-
-            {/* <Tooltip
-              label="Add to cart"
-              bg="white"
-              placement={'top'}
-              color={'gray.800'}
-              fontSize={'1.2em'}>
-              <chakra.a href={'#'} display={'flex'}>
-                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-              </chakra.a>
-            </Tooltip> */}
           </Flex>
 
           <Box
@@ -99,7 +87,6 @@ function ProductCard({ data,category }) {
           </Box>
 
           <Flex justifyContent="center" alignContent="center">
-            {/* <Rating rating={data.rating} numReviews={data.numReviews} /> */}
             <Box fontSize="xl" color={useColorModeValue('gray.800', 'white')}>
             ₹
               {data.price}
