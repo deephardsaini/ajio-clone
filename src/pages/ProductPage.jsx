@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Button, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Checkbox, Stack, Select } from '@chakra-ui/react';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../Components/ProductCard';
 import { mens, womens, kids } from '../db';
 
 const ProductPage = () => {

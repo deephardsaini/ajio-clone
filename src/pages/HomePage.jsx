@@ -1,8 +1,8 @@
 import React from "react";
-import Carousel from "../components/Carousel";
-import Footer from "../components/Footer";
+import Carousel from "../Components/Carousel";
+import Footer from "../Components/Footer";
 import { caro1,caro2,caro3, caro4 } from "../db";
-import Banner from "../components/Banner";
+import Banner from "../Components/Banner";
 
 
 const HomePage = () => {
