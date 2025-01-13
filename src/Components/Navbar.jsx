@@ -148,7 +148,6 @@ const DesktopNav = () => {
               </Link>
             </PopoverTrigger>
             
-
             {navItem.col1 && (
               <PopoverContent
                 border={"1px solid blue"}
