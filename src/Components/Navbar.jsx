@@ -6,9 +6,6 @@ import {
   Button,
   Stack,
   Collapse,
-  Icon,
-  Link,
-  Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
@@ -24,7 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { Link as RouterLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
@@ -90,7 +87,7 @@ export default function Navbar() {
           spacing={6}
         >
           <Button
-            as={RouterLink}
+            as={Link}
             to="/signin"
             fontSize={"sm"}
             fontWeight={400}
@@ -99,7 +96,7 @@ export default function Navbar() {
             Sign In
           </Button>
           <Button
-            as={RouterLink}
+            as={Link}
             to="/signup" // Assuming you have a signup route
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
